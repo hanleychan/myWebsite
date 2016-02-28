@@ -1,0 +1,104 @@
+@media screen and (min-width: 480px) {
+    /**
+     * Navigation
+     */
+    nav {
+        ul {
+            li {
+                width: 100px;
+            }
+        }
+    }
+
+
+    /**
+     * Portfolio - 2 column layout
+     */
+    ul#projectList {
+        li {
+            width:45%;
+        }
+    }
+
+    div#overlay {
+        h2, img, p {
+            width: 80%;
+        }
+    }
+
+    /**
+     * About - 2 columns
+     */
+    div#about {
+        img#aboutPhoto {
+            float: right;
+            width: 20%;
+        }
+        p {
+            float: left;
+            width: 75%;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 660px) {
+    /**
+     * Navigation
+     */
+    nav {
+        h1 {
+            float: left;
+            font-size: 3em;
+        }
+
+        ul {
+            li {
+                font-size: 1.5em;
+            }
+            
+            float: right;
+            background-color: inherit;
+            margin: 2% 5% 0 0;
+        }
+        overflow: auto;
+    }
+
+
+    /**
+     * Portfolio - 3 column layout
+     */
+    ul#projectList {
+        li {
+            width: (85/3)* 1%;
+        }
+    }
+
+    div#overlay {
+        h2 {
+            margin-top: 1%;
+        }
+        img {
+            width: 40%;
+        }
+        h2, p {
+            width: 50%;
+        }
+    }
+
+    /**
+     * Contact - 2 columns
+     */
+
+    form#contactForm {
+        float:left;
+        width: 50%;
+    }
+
+    div#contactDetails {
+        float: right;
+        width: 45%;
+        margin-left: 5%;
+    }
+}

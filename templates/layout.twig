@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hanley Chan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/responsive.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><a href={{ path_for('portfolio') }}>Hanley Chan</a></h1>
+
+            <ul id="navigationMenu">
+                <li{% if page == 'portfolio' %} id="selectedPage"{% endif %}><a href="{{ path_for('portfolio') }}">Home</a></li>
+                <li{% if page == 'about' %} id="selectedPage"{% endif %}><a href="{{ path_for('about') }}">About</a></li>
+                <li{% if page == 'contact' %} id="selectedPage"{% endif %}><a href="{{ path_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="wrapper">
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy{{ "now"|date("Y") }} Hanley Chan</p>
+    </footer>
+
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

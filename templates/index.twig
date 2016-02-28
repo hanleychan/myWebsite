@@ -1,0 +1,23 @@
+{% extends "layout.twig" %}
+{% block content %}
+    <h2>Projects</h2>
+    <p>Here are some projects that I have worked on.</p>
+    <ul id="projectList">
+        <li>
+            <a href="http://www.hanleyc.com/money">
+                <h4>Expenses Manager</h4>
+            </a>
+
+            <img src="images/expenses.jpg" alt="expenses manager" class="projectItem">
+
+            <a href="http://www.hanleyc.com/money">
+                <p>A web based expenses management app</p>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="js/portfolio.js"></script>
+{% endblock %}

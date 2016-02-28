@@ -1,0 +1,272 @@
+$backgroundColor: #ebebe0;
+$headerColor: #74afad;
+$darkerHeaderColor: #558c89;
+$evenDarkerHeaderColor: #003333;
+$headerLinksColor: #ffffff;
+$headerLinksSelectedColor: #004d4d;
+$headerLinksColorHover: #7d1935;
+$headerTitleColor: #ffffff;
+$projectItemBackgroundColor: #e0e0d1;
+$projectItemBackgroundColorHover: #99ccff;
+$projectItemTitleColor: #0000cc;
+$projectItemTitleHoverColor: #cc0000;
+$projectItemCaptionColor: #0000cc;
+$projectItemCaptionHoverColor: #cc0000;
+$contactFormBackgroundColor: #cceeff;
+$requiredFieldColor: #ee0000;
+$successColor: #006600;
+$failColor: #cc0000;
+$overlayBackgroundColor: #ffffff;
+
+/**
+ * General
+ */
+
+body {
+    background-color: $backgroundColor;
+    min-width: 320px;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+}
+
+a {
+    color: #0000ff;
+}
+
+div#wrapper {
+    max-width: 940px;
+    margin: 1% auto;
+    overflow: auto;
+    padding: 0 3%;
+}
+
+footer {
+    text-align: center;
+    clear: both;
+    margin-top: 2%;
+}
+
+
+/**
+ * Navigation
+ */
+
+nav {
+    ul {
+        li {
+            a {
+                display: inline-block;
+                text-decoration: none;
+                width: 80px;
+                color: $headerLinksColor;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            a:hover {
+                color: $headerLinksColorHover;
+            }
+            
+            display: inline-block;
+            list-style-type: none;
+            margin: 2px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        li#selectedPage {
+            a {
+                color: $headerLinksSelectedColor;
+            }
+            a:hover {
+                color: $headerLinksColorHover;
+            }
+        }
+        background-color: $darkerHeaderColor;
+        padding: 0;
+        margin: 0;
+    }
+
+    h1 {
+        a {
+            text-decoration: none;
+            color: $headerTitleColor;
+        }
+
+        a:hover {
+            color: $headerLinksColorHover;
+        }
+        
+        font-size: 2.2em;
+        margin: 0;
+        padding: 1%;
+    }
+
+    text-align: center;
+    background-color: $headerColor;
+    border-bottom: solid 5px $evenDarkerHeaderColor;
+}
+
+
+/**
+ * Portfolio
+ */
+ul#projectList {
+    li {
+        h4 {
+            text-decoration: underline;
+            color: $projectItemTitleColor;
+        }
+
+        h4:hover {
+            color: $projectItemTitleHoverColor;
+        }
+
+        img.projectItem {
+            width: 100%;
+        }
+
+        img.projectItem:hover {
+            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+            filter: grayscale(100%);
+        }
+
+        a {
+            text-decoration: none;
+            color: $projectItemCaptionColor;
+        }
+
+        a:hover {
+            color: $projectItemCaptionHoverColor;
+        }
+
+        border-radius: 5%;
+        text-align: center;
+        background-color: $projectItemBackgroundColor;
+        margin: 2.5%;
+        float: left;
+        width: 95%;
+    }
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div#overlay {
+    img {
+        width: 90%;
+        margin-top: 2%;
+    }
+
+    p {
+        a {
+            text-decoration: none;
+        }
+
+        text-align: left;
+        padding: 1%;
+        background-color: $overlayBackgroundColor;
+        width: 90%;
+        margin: 1% auto;
+    }
+
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+}
+
+
+/**
+ * About
+ */
+
+img#aboutPhoto {
+    border-radius: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+p#github {
+    a {
+        text-decoration: none;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        padding: 0 0 0 40px;
+        background-image: url("../images/Octocat.png");
+    }
+}
+
+
+/**
+ * Contact
+ */
+
+form#contactForm {
+    fieldset { 
+        padding: 0 5% 5%; 
+        background-color: $contactFormBackgroundColor;
+        border-radius: 25px;
+    }
+
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        margin: 5px 0 10px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100px;
+        margin: 5px 0 10px;
+    }
+
+    input#test_name {
+        display: none;
+    }
+
+    span.requiredField {
+        color: $requiredFieldColor;
+    }
+
+    p.success{
+        color: $successColor;
+    }
+
+    p.fail {
+        color: $failColor;
+    }
+}
+
+div#contactDetails {
+    ul#contactList {
+        li {
+            a {
+                background-repeat: no-repeat;
+                background-size: 20px 20px;  
+                padding: 0 0 0 30px;
+                margin: 0 0 10px;
+                text-decoration: none;
+            }
+            a#phoneLink {
+                background-image: url('../images/phone.png');
+            }
+            a#emailLink {
+                background-image: url('../images/mail.png');
+            }
+            a#twitterLink {
+                background-image: url('../images/twitter.png');
+            }
+
+            margin-bottom: 10px;
+        }
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
