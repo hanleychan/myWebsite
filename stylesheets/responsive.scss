@@ -102,3 +102,22 @@
         margin-left: 5%;
     }
 }
+
+@media screen and (max-height: 460px) {
+    div#overlay {
+        img {
+            height: 50%;
+            width: initial;
+        }
+    }
+}
+
+@media screen and (max-height: 320px) {
+    div#overlay {
+        img {
+            height: 40%;
+            width: initial;
+        }
+    }
+
+}
