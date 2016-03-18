@@ -46,7 +46,7 @@ $app->get('/contact', function($request, $response, $args) {
     $messages = $this->flash->getMessages();
     $page = "contact";
     
-    if($_SESSION["postData"]) {
+    if(isset($_SESSION["postData"])) {
         $postData = $_SESSION["postData"];
         $_SESSION["postData"] = null;
     }
