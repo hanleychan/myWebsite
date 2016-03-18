@@ -17,19 +17,19 @@
             {% endif %}
 
             <label for="name">Your name <span class="requiredField">*</span></label><br>
-            <input type="text" id="name" name="name"{% if name is defined %} value="{{ name }}" {% endif %} required><br>
+            <input type="text" id="name" name="name"{% if postData %} value="{{ postData.name }}" {% endif %} required><br>
 
             <label for="email">Your email address <span class="requiredField">*</span></label><br>
-            <input type="email" id="email" name="email" placeholder="email@example.com"{% if email is defined %} value="{{ email }}" {% endif %} required><br>
+            <input type="email" id="email" name="email" placeholder="email@example.com"{% if postData %} value="{{ postData.email }}" {% endif %} required><br>
             
             <label for="subject">Subject <span class="requiredField">*</span></label><br>
-            <input type="text" id="subject" name="subject" {% if subject is defined %} value="{{ subject }}" {% endif %} required><br>
+            <input type="text" id="subject" name="subject" {% if postData %} value="{{ postData.subject }}" {% endif %} required><br>
 
 
             <label for="message">Message <span class="requiredField">*</span></label><br>
-            <textarea id="message" name="message">{% if msg is defined %}{{ msg }}{% endif %}</textarea><br>
+            <textarea id="message" name="message">{% if postData %}{{ postData.message }}{% endif %}</textarea><br>
 
-            <input type="text" id="test_name" name="test_name" placeholder="Do not type anything in this input field.">
+            <input type="text" id="test_name" name="test_name" placeholder="Do not type anything in this input field."{% if postData %} value="{{ postData.test_name }}"{% endif %}>
 
             <input type="submit" id="send" name="send" value="Send">
         </fieldset>

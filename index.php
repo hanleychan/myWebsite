@@ -45,8 +45,16 @@ $app->get('/about', function($request, $response, $args) {
 $app->get('/contact', function($request, $response, $args) {
     $messages = $this->flash->getMessages();
     $page = "contact";
-
-    return $this->view->render($response, 'contact.twig', compact("messages", "page"));
+    
+    if($_SESSION["postData"]) {
+        $postData = $_SESSION["postData"];
+        $_SESSION["postData"] = null;
+    }
+    else {
+        $postData = null;
+    }
+    
+    return $this->view->render($response, 'contact.twig', compact("messages", "page", "postData"));
 })->setName('contact');
 
 $app->post('/contact', function($request, $response, $args) {
@@ -55,12 +63,12 @@ $app->post('/contact', function($request, $response, $args) {
     $subject = $request->getParam('subject'); 
     $msg = $request->getParam('message');
     $testName = $request->getParam('test_name');
-
+    $formError = false;
+    
     // if user filled in the hidden honeypot field
     if(!empty($testName)) {
         $this->flash->addMessage('fail', 'Error with form input');
-        $messages = $this->flash->getMessages();
-        return $this->view->render($response, 'contact.twig', compact("name", "email", "subject", "msg", "messages"));
+        $formError = true;
     }
 
     // validate form data
@@ -71,38 +79,40 @@ $app->post('/contact', function($request, $response, $args) {
         $cleanMsg = filter_var($msg, FILTER_SANITIZE_STRING);
     }
     else {
-        $this->flash->addMessage('fail', 'Error: Missing form data'); 
-        
-        return $this->view->render($response, 'contact.twig', array_merge(
-            compact("name", "email", "subject", "msg"),
-            ["messages" => $this->flash->getMessages(), "page"=>"contact"]
-        ));
+        $this->flash->addMessage('fail', 'Error: Missing form data');
+        $formError = true; 
     }
+    
+    // Build the email message and send it using Swiftmailer if no errors with form data
+    if(!$formError) {
+        $cleanMsg = "FROM: $cleanName <$cleanEmail>\n\n\n$cleanMsg";
 
-    // Build the email message and send it using Swiftmailer
-    $cleanMsg = "FROM: $cleanName <$cleanEmail>\n\n\n$cleanMsg";
+        $message = Swift_Message::newInstance()
+            ->setSubject("Email from hanleyc.com: " . $cleanSubject)
+            ->setFrom(array($cleanEmail => $cleanName))
+            ->setTo(array('hanleychan@gmail.com'=>'Hanley Chan'))
+            ->setBody($cleanMsg)
+        ;
 
-    $message = Swift_Message::newInstance()
-        ->setSubject("Email from hanleyc.com: " . $cleanSubject)
-        ->setFrom(array($cleanEmail => $cleanName))
-        ->setTo(array('hanleychan@gmail.com'=>'Hanley Chan'))
-        ->setBody($cleanMsg)
-    ;
+        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+            ->setUsername(GMAIL_USERNAME)
+            ->setPassword(GMAIL_PASSWORD)
+        ;
 
-    $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-        ->setUsername(GMAIL_USERNAME)
-        ->setPassword(GMAIL_PASSWORD)
-    ;
+        $mailer = Swift_Mailer::newInstance($transport);
 
-    $mailer = Swift_Mailer::newInstance($transport);
-
-    if($result = $mailer->send($message)) {
-        $this->flash->addMessage('success', 'Message has been sent successfully');
+        if($result = $mailer->send($message)) {
+            $this->flash->addMessage('success', 'Message has been sent successfully');
+        }
+        else {
+            $this->flash->addMessage('fail', 'Error: There was a problem sending your message');
+        }    
     }
     else {
-        $this->flash->addMessage('fail', 'Error: There was a problem sending your message');
+        $_SESSION["postData"] = $_POST;
     }
 
+    // redirect back to contact page
     $router = $this->router;
     return $response->withRedirect($router->pathFor('contact'));
 
