@@ -3,7 +3,7 @@
    * Navigation
    */
   nav ul li {
-    width: 100px; }
+    width: 90px; }
 
   /**
    * Portfolio - 2 column layout
@@ -71,3 +71,7 @@
   div#overlay img {
     height: 40%;
     width: initial; } }
+@media screen and (min-width: 2000px) {
+  header div {
+    width: 1200px;
+    margin: 0 auto; } }
