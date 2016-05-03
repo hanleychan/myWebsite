@@ -17,6 +17,7 @@ $requiredFieldColor: #ee0000;
 $successColor: #006600;
 $failColor: #cc0000;
 $overlayBackgroundColor: #ffffff;
+$contactSendButtonColor: #d6d6c2;
 
 /**
  * General
@@ -216,6 +217,11 @@ form#contactForm {
     input[type="text"], input[type="email"] {
         width: 100%;
         margin: 5px 0 10px;
+    }
+
+    input[type="submit"] {
+        background-color: $contactSendButtonColor;
+        border-radius: 10px;
     }
 
     textarea {
