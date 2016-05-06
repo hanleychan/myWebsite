@@ -26,8 +26,15 @@ $container['view'] = function ($container) {
     return $view;
 };
 
-$container['flash'] = function() {
+$container['flash'] = function($c) {
     return new \Slim\Flash\Messages();
+};
+
+// Override the default Not Found Handler
+$container['notFoundHandler'] = function ($c) {
+    return function ($request, $response) use ($c) {
+        return $c['view']->render($response, '404.twig', ['noMenu'=>true]); 
+    };
 };
 
 $app->get('/', function($request , $response, $args) {
