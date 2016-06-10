@@ -18,6 +18,10 @@
         li {
             width:45%;
         }
+
+        li:nth-child(2n+1) {
+            clear: both;
+        }
     }
 
     div#overlay {
@@ -72,6 +76,13 @@
     ul#projectList {
         li {
             width: (85/3)* 1%;
+        }
+
+        li:nth-child(2n+1) {
+            clear: none;
+        }
+        li:nth-child(3n+1) {
+            clear: both;
         }
     }
 

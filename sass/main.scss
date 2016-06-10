@@ -115,7 +115,7 @@ ul#projectList {
     li {
         h4 {
             text-decoration: underline;
-            color: $projectItemTitleColor;
+            margin: 2% 0;
         }
 
         h4:hover {
@@ -140,9 +140,11 @@ ul#projectList {
             color: $projectItemCaptionHoverColor;
         }
 
-        border-radius: 5%;
+        p {
+            margin: 0; padding: 0;
+        }
+
         text-align: center;
-        background-color: $projectItemBackgroundColor;
         margin: 2.5%;
         float: left;
         width: 95%;

@@ -41,7 +41,7 @@ nav {
         display: inline-block;
         text-decoration: none;
         width: 80px;
-        color: white;
+        color: #ffffff;
         padding-top: 5px;
         padding-bottom: 5px; }
       nav ul li a:hover {
@@ -56,7 +56,7 @@ nav {
     padding: 1%; }
     nav h1 a {
       text-decoration: none;
-      color: white; }
+      color: #ffffff; }
     nav h1 a:hover {
       color: #7d1935; }
 
@@ -68,15 +68,13 @@ ul#projectList {
   margin: 0;
   padding: 0; }
   ul#projectList li {
-    border-radius: 5%;
     text-align: center;
-    background-color: #e0e0d1;
     margin: 2.5%;
     float: left;
     width: 95%; }
     ul#projectList li h4 {
       text-decoration: underline;
-      color: #0000cc; }
+      margin: 2% 0; }
     ul#projectList li h4:hover {
       color: #cc0000; }
     ul#projectList li img.projectItem {
@@ -90,6 +88,9 @@ ul#projectList {
       color: #0000cc; }
     ul#projectList li a:hover {
       color: #cc0000; }
+    ul#projectList li p {
+      margin: 0;
+      padding: 0; }
 
 div#overlay {
   background: rgba(0, 0, 0, 0.9);
@@ -106,7 +107,7 @@ div#overlay {
   div#overlay p {
     text-align: left;
     padding: 1%;
-    background-color: white;
+    background-color: #ffffff;
     width: 90%;
     margin: 1% auto; }
     div#overlay p a {
@@ -171,3 +172,5 @@ div#contactDetails ul#contactList {
       background-image: url("../images/mail.png"); }
     div#contactDetails ul#contactList li a#twitterLink {
       background-image: url("../images/twitter.png"); }
+
+/*# sourceMappingURL=main.css.map */

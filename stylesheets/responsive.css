@@ -10,6 +10,8 @@
    */
   ul#projectList li {
     width: 45%; }
+  ul#projectList li:nth-child(2n+1) {
+    clear: both; }
 
   div#overlay h2, div#overlay img, div#overlay p {
     width: 80%; }
@@ -44,6 +46,10 @@
    */
   ul#projectList li {
     width: 28.33333%; }
+  ul#projectList li:nth-child(2n+1) {
+    clear: none; }
+  ul#projectList li:nth-child(3n+1) {
+    clear: both; }
 
   div#overlay h2 {
     margin-top: 1%; }
@@ -75,3 +81,5 @@
   header div {
     width: 1200px;
     margin: 0 auto; } }
+
+/*# sourceMappingURL=responsive.css.map */
