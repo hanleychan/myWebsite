@@ -109,7 +109,9 @@ div#overlay {
     padding: 1%;
     background-color: #ffffff;
     width: 90%;
-    margin: 1% auto; }
+    margin: 1% auto;
+    border: 2.5px solid yellow;
+    border-radius: 10px; }
     div#overlay p a {
       text-decoration: none; }
 

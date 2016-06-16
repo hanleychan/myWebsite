@@ -171,6 +171,8 @@ div#overlay {
         background-color: $overlayBackgroundColor;
         width: 90%;
         margin: 1% auto;
+        border: 2.5px solid yellow;
+        border-radius: 10px;
     }
 
     background: rgba(0,0,0,0.9);
