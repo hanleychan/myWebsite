@@ -1,4 +1,4 @@
 # myWebsite
-Code for my personal website
+My personal website
 
 http://www.hanleyc.com
