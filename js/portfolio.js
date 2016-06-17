@@ -14,16 +14,20 @@ $("ul#projectList li img.projectItem").click(function(event) {
     var imageAltText = $(this).attr("alt");
     var applicationLocation = $(this).next("a").attr("href");
     var applicationDescription = $(this).next("a").children("p").html() + "<br><br>";
-    var projectTitle = $(this).prev("a").children("h4").html();
+    var applicationTitle = $(this).prev("a").children("h4").html();
+    var $applicationTitleSpan = $('<span class="projectTitle"></span>');
     var $applicationLink = $("<a></a>");
 
     $applicationLink.attr("href", applicationLocation);
     $applicationLink.text(applicationLocation);
+    $applicationTitleSpan.text(applicationTitle);
 
     $image.attr("src", imageLocation);
     $image.attr("alt", imageAltText);
     
-    $caption.html(projectTitle + ":<br><br>");
+    $caption.html("");
+    $caption.append($applicationTitleSpan);
+    $caption.append("<br><br>");
     $caption.append(applicationDescription);
     $caption.append("Application Link: ");
     $caption.append($applicationLink);

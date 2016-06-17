@@ -166,6 +166,10 @@ div#overlay {
             text-decoration: none;
         }
 
+        span.projectTitle {
+            font-weight: bold;
+        }
+
         text-align: left;
         padding: 1%;
         background-color: $overlayBackgroundColor;

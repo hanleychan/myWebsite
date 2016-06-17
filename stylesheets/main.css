@@ -114,6 +114,8 @@ div#overlay {
     border-radius: 10px; }
     div#overlay p a {
       text-decoration: none; }
+    div#overlay p span.projectTitle {
+      font-weight: bold; }
 
 /**
  * About
