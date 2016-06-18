@@ -78,7 +78,8 @@ ul#projectList {
     ul#projectList li h4:hover {
       color: #cc0000; }
     ul#projectList li img.projectItem {
-      width: 100%; }
+      width: 100%;
+      border-radius: 10px; }
     ul#projectList li img.projectItem:hover {
       -webkit-filter: grayscale(100%);
       /* Chrome, Safari, Opera */
