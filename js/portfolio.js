@@ -27,10 +27,10 @@ $("ul#projectList li img.projectItem").click(function(event) {
     
     $caption.html("");
     $caption.append($applicationTitleSpan);
+    $caption.append("<br>");
+    $caption.append($applicationLink);
     $caption.append("<br><br>");
     $caption.append(applicationDescription);
-    $caption.append("Application Link: ");
-    $caption.append($applicationLink);
 
     $overlay.show();
 });
