@@ -2,7 +2,7 @@
  * General
  */
 body {
-  background-color: #ebebe0;
+  background-color: #d9d9d9;
   min-width: 320px;
   font-family: 'Montserrat', 'Open Sans', sans-serif; }
 
@@ -78,8 +78,7 @@ ul#projectList {
     ul#projectList li h4:hover {
       color: #cc0000; }
     ul#projectList li img.projectItem {
-      width: 100%;
-      border-radius: 10px; }
+      width: 100%; }
     ul#projectList li img.projectItem:hover {
       -webkit-filter: grayscale(100%);
       /* Chrome, Safari, Opera */
