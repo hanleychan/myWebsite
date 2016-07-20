@@ -81,7 +81,9 @@ nav {
             a:hover {
                 color: $headerLinksColorHover;
             }
+            text-shadow: initial;
         }
+        text-shadow: 2px 2px #000000;
         background-color: $darkerHeaderColor;
         padding: 0;
         margin: 0;
@@ -96,7 +98,8 @@ nav {
         a:hover {
             color: $headerLinksColorHover;
         }
-        
+
+        text-shadow: 3px 3px #000000;
         font-size: 2.2em;
         margin: 0;
         padding: 1%;
