@@ -11,14 +11,18 @@ a {
 
 div#wrapper {
   max-width: 940px;
-  margin: 1% auto;
+  margin: 1% auto 0;
   overflow: auto;
   padding: 0 3%; }
 
 footer {
   text-align: center;
   clear: both;
-  margin-top: 2%; }
+  background-color: #d96459;
+  padding: 1em 0; }
+
+div#container {
+  min-height: calc(100vh - 83px); }
 
 /**
  * Navigation

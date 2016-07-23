@@ -11,25 +11,27 @@
     <link rel="stylesheet" href="{{ path_for('portfolio') }}stylesheets/responsive.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div>
-                <h1><a href={{ path_for('portfolio') }}>Hanley Chan</a></h1>
+    <div id="container">
+        <header>
+            <nav>
+                <div>
+                    <h1><a href={{ path_for('portfolio') }}>Hanley Chan</a></h1>
 
-                <ul id="navigationMenu">
-                    <li{% if page == 'portfolio' %} id="selectedPage"{% endif %}><a href="{{ path_for('portfolio') }}">Home</a></li>
-                    <li{% if page == 'about' %} id="selectedPage"{% endif %}><a href="{{ path_for('about') }}">About</a></li>
-                    <li{% if page == 'contact' %} id="selectedPage"{% endif %}><a href="{{ path_for('contact') }}">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                    <ul id="navigationMenu">
+                        <li{% if page == 'portfolio' %} id="selectedPage"{% endif %}><a href="{{ path_for('portfolio') }}">Home</a></li>
+                        <li{% if page == 'about' %} id="selectedPage"{% endif %}><a href="{{ path_for('about') }}">About</a></li>
+                        <li{% if page == 'contact' %} id="selectedPage"{% endif %}><a href="{{ path_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-    <div id="wrapper">
-        <section>
-            {% block content %}
-            {% endblock %}
-        </section>
+        <div id="wrapper">
+            <section>
+                {% block content %}
+                {% endblock %}
+            </section>
+        </div>
     </div>
 
     <footer>
