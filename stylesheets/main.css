@@ -18,11 +18,12 @@ div#wrapper {
 footer {
   text-align: center;
   clear: both;
-  background-color: #d96459;
-  padding: 1em 0; }
+  background-color: #d9d9d9;
+  padding: 1em 0;
+  margin-top: 1em; }
 
 div#container {
-  min-height: calc(100vh - 83px); }
+  min-height: calc(100vh - 83px - 1em); }
 
 /**
  * Navigation
@@ -79,7 +80,8 @@ ul#projectList {
     text-align: center;
     margin: 2.5%;
     float: left;
-    width: 95%; }
+    width: 95%;
+    transition: transform 1s; }
     ul#projectList li h4 {
       text-decoration: underline;
       margin: 2% 0; }
@@ -99,6 +101,8 @@ ul#projectList {
     ul#projectList li p {
       margin: 0;
       padding: 0; }
+  ul#projectList li:hover {
+    transform: scale(1.1); }
 
 div#overlay {
   background: rgba(0, 0, 0, 0.9);
